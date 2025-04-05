@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PDF Reader</string>
+    <string name="show_bookmarks">Show Bookmarks</string>
+    <string name="add_bookmark">Add Bookmark</string>
+    <string name="prompt_open_pdf">Use the menu to open a PDF file.</string>
+    <string name="open_pdf">Open PDF</string>
+    <string name="loading_pdf">Loading PDF...</string>
+    <string name="error_loading_pdf">Error loading PDF</string>
+    <string name="no_bookmarks">No bookmarks for this PDF</string>
+    <string name="load_pdf_first">Load a PDF first</string>
+    <string name="bookmark_title_empty">Bookmark title cannot be empty</string>
+    <string name="bookmark_added">Bookmark added!</string>
+    <string name="error_saving_bookmark">Error saving bookmark</string>
+    <string name="no_summary">No summary provided.</string>
+    <string name="go_to_page">Go To Page %1$d</string> <string name="close">Close</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="add_bookmark_dialog_title">Add Bookmark (Page %1$d)</string>
+    <string name="pdf_load_complete">PDF Loaded: %1$d pages</string>
+    <string name="jumped_to_bookmark">Jumped to: %1$s</string>
+    <string name="could_not_get_permissions">Could not get permissions for this file.</string>
+</resources>

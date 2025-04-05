@@ -1,0 +1,55 @@
+# gradle/libs.versions.toml
+
+[versions]
+# Existing from your file (adjust if needed, e.g., check latest stable versions)
+agp = "8.9.1" # User provided - Note: As of early 2025, 8.3.x/8.4.x is latest stable. Ensure this matches your Android Studio version compatibility.
+appcompat = "1.6.1"
+coreKtx = "1.10.1" # Consider updating to 1.13.1 or later
+espressoCore = "3.5.1" # Consider updating to 3.6.1 or later
+junit = "4.13.2"
+junitVersion = "1.1.5" # Consider updating androidx.test.ext:junit to 1.2.1 or later
+kotlin = "2.0.21" # User provided
+material = "1.10.0" # Consider updating to 1.12.0 or later
+
+# Added versions for new dependencies (Using versions from previous example)
+activityKtx = "1.8.2" # Or check latest
+coroutines = "1.7.3" # Or check latest
+lifecycle = "2.7.0" # Or check latest
+pdfViewer = "3.2.0-beta.1" # Check for latest stable release if preferred
+room = "2.6.1" # Or check latest
+
+[libraries]
+# Existing from your file (alphabetized)
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" } # ForandroidTestImplementation
+junit = { group = "junit", name = "junit", version.ref = "junit" } # For testImplementation
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+# Optional: Room testing library
+# androidx-room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+pdfviewer = { group = "com.github.barteksc", name = "android-pdf-viewer", version.ref = "pdfViewer" }
+
+
+[plugins]
+# Existing from your file
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+# Added plugin
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" } # Kapt plugin for annotation processing (like Room)
+
+# Example of a bundle (optional)
+# You could group Room dependencies like this:
+#[bundles]
+# room = ["androidx-room-runtime", "androidx-room-ktx"]
+# And then in build.gradle.kts: implementation(libs.bundles.room)
+# kapt(libs.androidx.room.compiler) // Compiler still needs to be separate
