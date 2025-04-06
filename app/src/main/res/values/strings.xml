@@ -20,4 +20,6 @@
     <string name="pdf_load_complete">PDF Loaded: %1$d pages</string>
     <string name="jumped_to_bookmark">Jumped to: %1$s</string>
     <string name="could_not_get_permissions">Could not get permissions for this file.</string>
+    <string name="search_bookmarks_hint">Search by title or summary</string>
+    <string name="no_matching_bookmarks">No matching bookmarks found</string>
 </resources>
