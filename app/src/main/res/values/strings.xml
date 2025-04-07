@@ -22,4 +22,13 @@
     <string name="could_not_get_permissions">Could not get permissions for this file.</string>
     <string name="search_bookmarks_hint">Search by title or summary</string>
     <string name="no_matching_bookmarks">No matching bookmarks found</string>
+    <string name="permission_lost_reopen">Permission for this file was lost. Please reopen it.</string>
+    <string name="permission_lost_file_removed">Permission lost, file removed from recents.</string>
+    <string name="pdf_file_icon">PDF file icon</string>
+
+
+    <string name="open_pdf_to_see_bookmarks">Open a PDF to view its bookmarks</string>
+    <string name="no_bookmarks_for_this_pdf">No bookmarks saved for this PDF</string>
+
+
 </resources>

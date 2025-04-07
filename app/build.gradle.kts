@@ -62,7 +62,7 @@ dependencies {
     implementation(libs.material)
 
     implementation("com.github.mhiew:android-pdf-viewer:$pdfViewerVersion")
-
+    implementation("androidx.recyclerview:recyclerview:1.3.2") // Use the latest stable version
     implementation("androidx.room:room-runtime:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
