@@ -19,8 +19,8 @@
             android:id="@+id/toolbar"
             style="@style/Widget.Material3.Toolbar.Surface"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="@string/app_name">
+            android:layout_height="match_parent"
+            app:title="krht">
 
             <ImageButton
                 android:id="@+id/buttonShowBookmarks"
@@ -32,95 +32,56 @@
                 android:contentDescription="@string/show_bookmarks"
                 android:padding="8dp"
                 android:src="@drawable/ic_bookmarks"
-                android:visibility="gone"
                 tools:visibility="visible" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/readerViewContainer"
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        tools:visibility="visible" />
 
-        <com.github.barteksc.pdfviewer.PDFView
-            android:id="@+id/pdfView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:visibility="visible" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAddBookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/add_bookmark"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_add_bookmark"
-            tools:visibility="visible" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/libraryViewContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <TextView
+        android:id="@+id/textViewOpenFilePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prompt_open_pdf"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewRecentFiles"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:clipToPadding="false"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_recent_file" />
 
-        <TextView
-            android:id="@+id/textViewEmptyLibrary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/prompt_open_pdf"
-            android:textAppearance="?attr/textAppearanceBodyLarge"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddBookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/add_bookmark"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_bookmark" />
 </androidx.constraintlayout.widget.ConstraintLayout>
