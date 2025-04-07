@@ -1,0 +1,1 @@
+c koi un ridmi
